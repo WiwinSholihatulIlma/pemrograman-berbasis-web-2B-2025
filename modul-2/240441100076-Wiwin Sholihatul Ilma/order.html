@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pesan Kopi</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Beranda</a></li>
+                <li><a href="coffe.html">Minuman</a></li>
+                <li><a href="food.html">Makanan</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="about.html">Tentang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="order-section">
+            <h1>Pesan Kopi dan Camilan Favorit Anda</h1>
+            <form action="submit-order.php" method="POST">
+                <div class="order-item">
+                    <label for="coffee">Pilih Kopi:</label>
+                    <select id="coffee" name="coffee">
+                        <option value="lungo">Lungo Coffee - Rp 68</option>
+                        <option value="dalgo">Dalgona Coffee - Rp 70</option>
+                        <option value="iced">Iced Coffee - Rp 75</option>
+                        <option value="filter">Filter Coffee - Rp 50</option>
+                    </select>
+                </div>
+
+                <div class="order-item">
+                    <label for="dessert">Pilih Roti/Kue:</label>
+                    <select id="dessert" name="dessert">
+                        <option value="croisant">Croissant Mentega - Rp 25</option>
+                        <option value="brownies">Brownies Cokelat - Rp 30</option>
+                        <option value="banana bread">banana Bread - Rp 28</option>
+                        <option value="chesscake">Chesscake Stoberi - Rp 30</option>
+                    </select>
+                </div>
+
+                <div class="order-item">
+                    <label for="quantity">Jumlah Kopi:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+
+                <div class="order-item">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="order-item">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="order-item">
+                    <label for="address">Alamat Pengiriman:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="order-button">Pesan Sekarang</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Secangkir Kopi. Hak cipta dilindungi.</p>
+    </footer>
+</body>
+</html>
