@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ByteAcademy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+
+  <script>
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="flex h-screen transition-colors duration-300 dark:bg-gray-800 dark:text-white">
+
+  <div class="w-1/2 bg-purple-800 flex items-center justify-center">
+    <img src="Gambar 5.png" alt="Ilustrasi" class="w-full" />
+  </div>
+
+  <div class="w-1/2 bg-white dark:bg-gray-900 flex items-center justify-center">
+    <form id="signupForm" class="w-full max-w-md space-y-4 px-6">
+      
+      <div class="flex justify-end">
+        <button type="button" id="theme-toggle" class="text-sm border px-3 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+          Dark Mode
+        </button>
+      </div>
+
+      <div class="flex items-center space-x-2 mb-2">
+        <img src="logo.png" alt="Logo" class="w-58 h-10">
+      </div>
+
+      <h2 class="text-xl font-bold">Mulai Hari Ini</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-300">Menunggu besok? Bisa jadi kamu takkan pernah mulai.</p>
+
+      <input type="email" id="email" placeholder="Alamat Email" required class="w-full px-4 py-2 border rounded dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+      <input type="text" id="fullname" placeholder="Nama Lengkap" required class="w-full px-4 py-2 border rounded dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+      <input type="password" id="password" placeholder="Password" required class="w-full px-4 py-2 border rounded dark:bg-gray-800 dark:border-gray-600 dark:text-white" />
+
+      <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition">Sign Up</button>
+      <button type="button" class="w-full border py-2 rounded flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2" />
+        Sign Up with Google
+      </button>
+
+      <p class="text-sm text-center text-gray-500 dark:text-gray-300 mt-4">
+        <a href="halaman1.html" class="text-purple-600 hover:underline">← Kembali ke Beranda</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      toggleBtn.textContent = 'Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      toggleBtn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      localStorage.theme = isDark ? 'dark' : 'light';
+    });
+  </script>
+</body>
+</html>
